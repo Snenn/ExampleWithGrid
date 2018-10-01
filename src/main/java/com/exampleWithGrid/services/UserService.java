@@ -38,20 +38,16 @@ public class UserService implements IUserService {
         String messages;
         User user = new User();
         try {
-            String end = "end";
-            String top = "top";
             user.setSurname(Util.getString(surname));
             user.setName(Util.getString(name));
             user.setAge(Util.getInt(age));
             String type2 = Util.getString(type);
-            logger.error("before userDao.getMaxNumber()");
-            if (type2.equals(top)){
-                user.setNumber(userDao.getMaxNumber()+1);
-            }
-            if (type2.equals("end")){
+            if (type2.equals("top")){
                 user.setNumber(userDao.getMinNumber()-1);
             }
-            logger.error(user.toString());
+            if (type2.equals("end")){
+                user.setNumber(userDao.getMaxNumber()+1);
+            }
             userDao.saveOrUpdate(user);
             messages="user had saved";
         }

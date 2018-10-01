@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.servlet.http.HttpSession;
 import java.io.Serializable;
 
 @Controller
@@ -26,10 +25,17 @@ public class HomeController implements Serializable {
     }
 
     @RequestMapping(value = {"/"}, method = {RequestMethod.POST, RequestMethod.GET})
-    public String homePage2(HttpSession httpSession) {
+    public String homePage() {
 
         logger.info("user opened the main page");
         return "home";
+    }
+
+    @RequestMapping(value = {"/option2"}, method = {RequestMethod.POST, RequestMethod.GET})
+    public String option2() {
+
+        logger.info("user opened the option2 page");
+        return "option2";
     }
 
 }

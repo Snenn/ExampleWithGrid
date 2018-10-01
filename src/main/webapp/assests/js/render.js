@@ -35,7 +35,48 @@ var MainRender = React.createClass({
             }
         },
 
-        loadData () {
+        validation()
+        {
+            var nameReg = /^[a-zA-z]+$/;
+            var ageReg = /^[0-9]+$/;
+            var status = true;
+            if ($('#name').val() == "") {
+                document.getElementById("name1").style.visibility = "visible";
+                status = false;
+            } else if (!nameReg.test($('#name').val())) {
+                document.getElementById("name2").style.visibility = "visible";
+                status = false;
+            }
+            if ($('#surname').val() == "") {
+                document.getElementById("surname1").style.visibility = "visible";
+                status = false;
+            } else if (!nameReg.test($('#surname').val())) {
+                document.getElementById("surname2").style.visibility = "visible";
+                status = false;
+            }
+            if ($('#age').val() == "") {
+                document.getElementById("age1").style.visibility = "visible";
+                status = false;
+            } else  if (!ageReg.test($('#age').val())) {
+                document.getElementById("age2").style.visibility = "visible";
+                status = false;
+            }
+
+            return status;
+        },
+
+        hide() {
+            $('#name1').css({'visibility': 'hidden'});
+            $('#surname1').css({'visibility': 'hidden'});
+            $('#age1').css({'visibility': 'hidden'});
+            $('#name2').css({'visibility': 'hidden'});
+            $('#surname2').css({'visibility': 'hidden'});
+            $('#age2').css({'visibility': 'hidden'});
+
+        },
+
+        loadData()
+        {
             var self = this;
             var req = new XMLHttpRequest();
             req.responseType = 'json';
@@ -49,9 +90,11 @@ var MainRender = React.createClass({
                     self.setState({data: json});
                 }
             }
-        },
+        }
+        ,
 
-        createUser (surname, name, age, type) {
+        createUser(surname, name, age, type)
+        {
             var self = this;
             var req = new XMLHttpRequest();
             req.responseType = 'json';
@@ -63,30 +106,39 @@ var MainRender = React.createClass({
                 if (req.readyState === 4 && req.status === 200) {
                     json = req.response;
                     alert(json);
+                    self.setState({state: this.state});
+                    self.loadData();
                 }
             }
-        },
+        }
+        ,
 
 
         componentDidMount: function () {
             var self = this;
             window.ee.addListener('Action', function (item) {
-                if (item!="update") {
-                    var surname = document.getElementById("surname").value;
-                    var name = document.getElementById("name").value;
-                    var age = document.getElementById("age").value;
-                    var type = item;
-                    self.setState({state: this.state});
-                    self.createUser(surname, name, age, type);
+                self.hide();
+                if (item != "update") {
+                    if (self.validation() == true) {
+                        var surname = document.getElementById("surname").value;
+                        var name = document.getElementById("name").value;
+                        var age = document.getElementById("age").value;
+                        var type = item;
+                        self.createUser(surname, name, age, type).then(self.loadData());
+                    }
+                    else alert("wrong form");
                 }
+                self.setState({state: this.state});
                 self.loadData();
             });
             self.loadData();
-        },
+        }
+        ,
 
         componentWillUnmount: function () {
             window.ee.removeListener('Action');
-        },
+        }
+        ,
 
 
         render()

@@ -5,4 +5,7 @@
 
     <definition name="home" template="/index.jsp"/>
 
+    <definition name="option2" template="/index2.jsp"/>
+
+
 </tiles-definitions>

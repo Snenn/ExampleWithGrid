@@ -19,13 +19,21 @@
     <div style="width: 25%; float: left; height: 100%">
         <label for="surname">Last Name</label>
         <input type="text" id="surname">
+        <div class="message" id="surname1">fill in the field!</div>
+        <div class="message" id="surname2">wrong format!</div>
         <label for="name">First Name</label>
         <input type="text" id="name">
+        <div class="message" id="name1">fill in the field!</div>
+        <div class="message" id="name2">wrong format!</div>
         <label for="age">Age</label>
         <input type="text" id="age">
+        <div class="message" id="age1">fill in the field!</div>
+        <div class="message" id="age2">wrong format!</div>
         <button id="addTop">add to top</button>
         <button id="addEnd">add to end</button>
-        <button id="clear" onclick="">clear form</button>
+        <button id="clear">clear form</button>
+        <p><a href="/option2">2 option</a></p>
+
     </div>
     <div style="width: 70%; float: right; height: 100%; margin-left: 5%">
         <div>
@@ -35,7 +43,9 @@
             <div class="grid-item">Age</div>
         </div>
         <div id="root"></div>
-        <div><button id="update" style="width: 20%; margin-top: 5%">update table</button></div>
+        <div>
+            <button id="update" style="width: 20%; margin-top: 5%">update table</button>
+        </div>
     </div>
 </div>
 <script type="text/babel" src="../assests/js/render.js"></script>
