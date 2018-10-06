@@ -17,13 +17,18 @@
 <div style="width: 90%; height: 90%; margin-left: 5%; margin-top: 2%;">
     <div style="height: 20%; font-size: 40px; text-align: center">example grid table</div>
     <div style="width: 25%; float: left; height: 100%">
-        <button id="addGrid" style="visibility: visible">add Grid</button>
-        <button id="addTopRec" style="visibility: hidden">add record to top</button>
-        <button id="addEndRec" style="visibility: hidden">add record to end</button>
-        <button id="save" style="visibility: hidden">save</button>
+        <button id="addRec">add record</button>
+        <button id="save">save</button>
     </div>
     <div style="width: 70%; float: right; height: 100%; margin-left: 5%">
-        <div id="root"></div>
+        <div>
+            <div class="grid-item">ID</div>
+            <div class="grid-item">Surname</div>
+            <div class="grid-item">Name</div>
+            <div class="grid-item">Age</div>
+        </div>
+        <div id="render"></div>
+        <div id="records"></div>
     </div>
 </div>
 <script type="text/babel" src="assests/js/grid.js"></script>

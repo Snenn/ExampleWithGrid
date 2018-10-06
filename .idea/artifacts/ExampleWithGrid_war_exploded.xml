@@ -92,6 +92,7 @@
           <element id="library" level="project" name="Maven: org.apache.tiles:tiles-request-jsp:1.0.6" />
           <element id="library" level="project" name="Maven: org.apache.tiles:tiles-el:3.0.5" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.0" />
+          <element id="library" level="project" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" />
           <element id="library" level="project" name="Maven: org.apache.spark:spark-core_2.11:2.2.0" />
           <element id="library" level="project" name="Maven: org.apache.avro:avro:1.7.7" />
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" />
@@ -144,7 +145,7 @@
           <element id="library" level="project" name="Maven: org.apache.curator:curator-recipes:2.6.0" />
           <element id="library" level="project" name="Maven: org.htrace:htrace-core:3.0.4" />
           <element id="library" level="project" name="Maven: org.apache.hadoop:hadoop-hdfs:2.6.5" />
-          <element id="library" level="project" name="Maven: org.mortbay.jetty:jetty-util:6.1.14" />
+          <element id="library" level="project" name="Maven: org.mortbay.jetty:jetty-util:6.1.25" />
           <element id="library" level="project" name="Maven: xerces:xercesImpl:2.11.0" />
           <element id="library" level="project" name="Maven: org.apache.hadoop:hadoop-mapreduce-client-app:2.6.5" />
           <element id="library" level="project" name="Maven: org.apache.hadoop:hadoop-mapreduce-client-common:2.6.5" />

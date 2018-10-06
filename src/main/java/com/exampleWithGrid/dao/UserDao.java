@@ -28,7 +28,7 @@ public class UserDao extends Dao<User> implements IUserDao<User> {
     public List<User> getAll() throws Exception {
         List users = null;
         try {
-            Query query = getSession().createQuery("FROM User group by number");
+            Query query = getSession().createQuery("FROM User order by number");
             users = query.list();
             logger.info("all users:" + users);
         } catch (HibernateException e) {

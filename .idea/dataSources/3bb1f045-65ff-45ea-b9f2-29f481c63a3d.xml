@@ -22,35 +22,36 @@
     <schema id="16" parent="1" name="time_line"/>
     <schema id="17" parent="1" name="web"/>
     <schema id="18" parent="1" name="world"/>
-    <table id="19" parent="2" name="user"/>
-    <column id="20" parent="19" name="id">
+    <schema id="19" parent="1" name="testsql"/>
+    <table id="20" parent="2" name="user"/>
+    <column id="21" parent="20" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="21" parent="19" name="surname">
+    <column id="22" parent="20" name="surname">
       <Position>2</Position>
       <DataType>varchar(30)|0</DataType>
     </column>
-    <column id="22" parent="19" name="name">
+    <column id="23" parent="20" name="name">
       <Position>3</Position>
       <DataType>varchar(30)|0</DataType>
     </column>
-    <column id="23" parent="19" name="age">
+    <column id="24" parent="20" name="age">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="24" parent="19" name="number">
+    <column id="25" parent="20" name="number">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="25" parent="19" name="user_id_uindex">
+    <index id="26" parent="20" name="user_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="26" parent="19" name="user_id_uindex">
+    <key id="27" parent="20" name="user_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>user_id_uindex</UnderlyingIndexName>
     </key>

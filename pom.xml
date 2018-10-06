@@ -206,6 +206,12 @@
             <artifactId>jackson-annotations</artifactId>
             <version>2.8.0</version>
         </dependency>
+        <!-- google json-->
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
         <!--ehcache-->
         <dependency>
             <groupId>net.sf.ehcache</groupId>
@@ -391,6 +397,11 @@
             <artifactId>hamcrest-library</artifactId>
             <version>1.3</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jetty-util</artifactId>
+            <version>6.1.25</version>
         </dependency>
 
     </dependencies>
